@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 html,
 body {
     height: 100%;
@@ -9,12 +8,12 @@ body {
 
 body {
     font-family: Arial, sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
+        BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+        'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     padding: 0;
     flex-direction: column;
-    background-color: #ebf2f6;
+    background-color: #f9fbfc;
 }
 
 main {
@@ -34,20 +33,21 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 30px 80px;
 }
 
 .logo {
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 700;
     color: #e4e4e7;
     cursor: pointer;
-    margin-left: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
 }
+
 
 nav ul {
     list-style-type: none;
     padding: 10px;
-    margin: 10px;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -71,28 +71,22 @@ nav ul li a {
     text-decoration: none;
     color: #fff;
     font-weight: 450;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .login {
     color: #fff;
     background-color: #0000ff;
-    padding: 5px 10px;
+    padding: 5px 20px;
     border-radius: 5px;
     border: 1px solid #0000ff;
 }
 
 .login:hover {
     color: #fff;
-    background-color: #0606db;
+    background-color: #06069e;
 }
 
-h1 {
-    text-align: center;
-    margin: 50px auto 15px;
-    font-size: 55px;
-    color: rgb(57, 76, 248);
-}
 
 p {
     text-align: center;
@@ -100,20 +94,189 @@ p {
     margin-bottom: 50px;
 }
 
+.hamburger {
+    display: none;
+}
+
 
 /* ---------------------------------------------*/
-/* Map                                 */
+/* Hero Banner                                  */
 /* ---------------------------------------------*/
 
+
+.hero-banner {
+    position: relative;
+    overflow: hidden;
+    height: 770px;
+    text-align: left;
+}
+
+.hero-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.38);
+    z-index: 2;
+}
+
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px);
+    z-index: 1;
+}
+
+.banner-content {
+    margin-top: 250px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    /* Ensures text is on top of the shadow */
+    color: #fff;
+    padding: 60px 20px;
+    /* Additional styling for your content */
+}
+
+.banner-content h2 {
+    font-size: 65px;
+    margin-bottom: 20px;
+    z-index: 2;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(154, 155, 166, 0.7);
+}
+
+.banner-content p {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+    z-index: 2;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(87, 85, 85, 0.5);
+}
+
+.btn-primary {
+    background-color: #0000ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 5px;
+
+}
+
+.btn-primary:hover {
+    background-color: #06069e;
+}
+
+
+/* ---------------------------------------------*/
+/* Featured Section                             */
+/* ---------------------------------------------*/
+
+
+.featured-section {
+    padding: 45px 20px;
+    text-align: center;
+    margin: auto 80px;
+    margin-bottom: 40px;
+}
+
+.featured-section h2 {
+    font-size: 47px;
+    margin: 70px auto 60px;
+    color: #0606db;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    padding: 20px 0;
+    gap: 25px;
+}
+
+.restaurant-card {
+    border: 1px solid #fcfafa;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.restaurant-card:hover {
+    transform: translate(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.restaurant-card:hover img {
+    transform: scale(1.01);
+    /* Zoom in by 10% */
+}
+
+
+.restaurant-card h3 {
+    font-size: 30px;
+    color: #000;
+
+}
+
+.restaurant-card p {
+    padding: 0 15px 5px;
+    font-size: 23px;
+    color: #3b3a3a;
+    margin-bottom: 6px;
+}
+
+
+/* ---------------------------------------------*/
+/* Map                                         */
+/* ---------------------------------------------*/
+
+
+#star {
+    color: rgb(247, 219, 62);
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.track h1 {
+    text-align: center;
+    margin: 70px auto 10px;
+    font-size: 55px;
+    color: #0606db;
+}
+
+.track {
+    background-color: #ebf2f6;
+    padding: auto 80px;
+}
 
 #map {
-    height: 500px;
-    width: 80%;
-    border-radius: 5px;
+    height: 600px;
+    width: 90%;
+    border-radius: 10px;
     justify-content: center;
     place-items: center;
     align-items: center;
     margin: 50px auto;
+    margin-bottom: 90px;
 
 }
 
@@ -121,7 +284,7 @@ p {
     margin: 20px auto;
     background-color: #0000ff;
     color: #fff;
-    padding: 5px 25px;
+    padding: 10px 25px;
     border-radius: 5px;
     border: 1px solid #0000ff;
     display: block;
@@ -131,16 +294,74 @@ p {
 
 .trackButton:hover {
     color: #fff;
-    background-color: #0606db;
+    background-color: #06069e;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
+
+
+/* ---------------------------------------------*/
+/* FAQ                                          */
+/* ---------------------------------------------*/
+
+
+.faq-section {
+    padding: 50px 0;
+    text-align: center;
+    margin: auto 80px;
+}
+
+.faq-section h2 {
+    font-size: 47px;
+    margin: 70px auto 60px;
+    color: #0606db;
+}
+
+.faq-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.faq-item:hover {
+    transform: translate(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    font-size: 23px;
+    color: #08089d;
+}
+
+.faq-item p {
+    margin-bottom: 0;
+    font-size: 20px;
+    color: #3b3a3a;
+}
+
+
+/* ---------------------------------------------*/
+/* Footer                                       */
+/* ---------------------------------------------*/
+
 
 footer {
     align-items: center;
     width: 100%;
     padding: 10px 0;
     margin-top: 130px;
-    background-color: #d2dade;
+    background-color: #dee0e1;
 }
 
 .social-icons {
@@ -151,14 +372,14 @@ footer {
 }
 
 .social-icons a i {
-    font-size: 35px;
+    font-size: 45px;
     color: #000;
     margin-top: 35px;
 }
 
 .copyright {
     text-align: right;
-    font-size: 25px;
+    font-size: 30px;
     margin-top: 55px;
     margin-right: 60px;
     display: block;
@@ -172,52 +393,21 @@ footer {
 
 
 /* ---------------------------------------------*/
-/* Media query                                 */
+/* Media query                                  */
 /* ---------------------------------------------*/
 
 
+/* Media Query for screens with a maximum width of 768px */
 @media screen and (max-width: 768px) {
 
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #map {
-        width: 90%;
-        height: 300px;
-    }
-
-    .trackButton {
-        margin-top: 20px;
-    }
-
+    /* Header adjustments */
     header {
-        width: 100%;
+        padding: 15px;
     }
 
     .logo {
-        font-size: 20px;
+        font-size: 30px;
         margin: auto;
-    }
-
-}
-
-
-/* Hamburger Menu for smaller screens */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 30px;
-    color: #ffffff;
-}
-
-/* Responsive design adjustments */
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
     }
 
     nav ul {
@@ -233,9 +423,76 @@ footer {
 
     nav ul li a {
         display: block;
+        padding: 10px;
     }
 
-    .nav-active {
+    /* Banner adjustments */
+    .banner-content {
+        margin-top: 200px;
+        padding: 40px 20px;
+    }
+
+    .banner-content h2 {
+        font-size: 40px;
+    }
+
+    .banner-content p {
+        font-size: 22px;
+    }
+
+    /* Restaurant grid adjustments */
+    .featured-section {
+        padding: 30px 10px;
+        text-align: center;
+        margin: auto;
+    }
+
+    .featured-section h2 {
+        font-size: 35px;
+        margin: 50px auto 20px;
+    }
+
+    /* FAQ section adjustments */
+    .faq-section {
+        padding: 30px 10px;
+        text-align: center;
+        margin: auto;
+    }
+
+    .faq-section h2 {
+        font-size: 35px;
+        margin: 50px auto 20px;
+    }
+
+    /* Footer adjustments */
+    footer {
+        margin-top: 50px;
+        width: 100%;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: center;
         display: flex;
+    }
+
+    .social-icons,
+    .copyright {
+        margin: 20px auto;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .social-icons {
+        margin-left: 55px;
+    }
+
+    .social-icons a i {
+        font-size: 35px;
+        text-align: center;
+        margin-top: 35px;
+
+    }
+
+    .copyright {
+        font-size: 25px;
     }
 }
